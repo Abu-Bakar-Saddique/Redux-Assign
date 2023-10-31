@@ -34,14 +34,15 @@ const DisplayUsers = () => {
     <div>
       <h2>User List</h2>
       <List
-        grid={{ gutter: 12, column: 4 }}
+        grid={{ gutter: 12, column: 5 }}
         dataSource={users}
         renderItem={(user) => (
+          <div style={{display: 'flex'}}>
           <List.Item>
             <Badge.Ribbon text={user.id}>
               <Card
                 title={user.name}
-                style={{ width: 250, height: 420, border: '1px solid skyblue' }}
+                style={{ width: 280, height: 420, border: '1px solid skyblue' }}
                 actions={[
                   <Button
                     type="primary"
@@ -69,6 +70,7 @@ const DisplayUsers = () => {
               </Card>
             </Badge.Ribbon>
           </List.Item>
+          </div>
         )}
       />
       {editModalVisible && (
